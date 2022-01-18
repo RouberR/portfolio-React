@@ -45,6 +45,7 @@ gap: 5vh;
 
 
 .item__container:hover{
+    transition: 0.5s;
     -webkit-box-shadow: 0px 2px 12px 4px rgba(83, 149, 201, 1);
 -moz-box-shadow: 0px 2px 12px 4px rgba(83, 149, 201, 1);
 box-shadow: 0px 2px 12px 4px rgba(83, 149, 201, 1);
