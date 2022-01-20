@@ -24,6 +24,26 @@ export const UserPorfolio = () => {
           </div>
         </a>
       </div>
+
+      <div className="item__container">
+        <a href="https://eloquent-sinoussi-9f1ab7.netlify.app/" target="_blank" rel="noreferrer">
+          <div
+            className="bg-image"
+            style={{ backgroundImage: `url(${test})` }}
+          />
+          <div className="inforation">
+            <p>
+              <span>Title: </span>Food menu
+            </p>
+            <p>
+              <span>Description: </span>Simple food project
+            </p>
+            <p>
+              <span>Technologies: </span>React, scss
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };

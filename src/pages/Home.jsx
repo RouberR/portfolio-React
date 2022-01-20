@@ -2,18 +2,16 @@ import React, {useEffect, useState} from "react";
 
 import "./style/home.scss";
 import { getAuth, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
-import db from "../fb";
+import db, { useAuth } from "../fb";
 import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const provider = new GoogleAuthProvider();
-  const [user, setUser] = useState("")
   const navigate = useNavigate()
   const auth = getAuth();
- 
+  const currentUser = useAuth()
   const onAuth = () => {
-    if(auth.currentUser.email){
-      setUser(auth.currentUser.email)
-      navigate("/user")
+    if(currentUser !== null){
+      navigate(`/${currentUser.uid}`)
     }else {
       signInWithRedirect(auth, provider);
     }

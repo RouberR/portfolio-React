@@ -1,14 +1,11 @@
 import { getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
+import { useAuth } from '../../fb';
 import './header.scss'
 
 export const Header = () => {
     const [user, setUser] = useState();
-    const auth = getAuth();
-    
-    const getUser = () => {
-        setUser(auth.currentUser.email)
-    }
+    const currentUser = useAuth();
     useEffect(() => {
         
     }, [])
@@ -19,8 +16,8 @@ export const Header = () => {
                 <button>edit</button>
             </div>
             <div className='rigth__container'>
-            {auth.currentUser && <><img className='avatar' src={auth.currentUser.photoURL} alt="avatar"/>
-            <span>{auth.currentUser.displayName}</span></>}
+            {currentUser && <><img className='avatar' src={currentUser.photoURL} alt="avatar"/>
+            <span>{currentUser.displayName}</span></>}
             
                 
                 
